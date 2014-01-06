@@ -7,20 +7,13 @@
 //
 
 #include "GFScene.h"
+#include "GFMsgQueue.h"
 
-CCScene *GFScene::scene()
+void GFScene::regCommandObserver(std::string id, CCObject * actor)
 {
-    CCScene *scene = NULL;
-    do {
-        // 'scene' is an autorelease object
-        scene = CCScene::create();
-        CC_BREAK_IF(! scene);
-        // 'layer' is an autorelease object
-        Login *layer = GFScene::create();
-        CC_BREAK_IF(! layer);
-        // add layer as a child to scene
-        scene->addChild(layer);
-    } while (0);
-    // return the scene
-    return scene;
+    GFMsgQueueMgr::getInstance()->regCommandObserver(<#std::string id#>, <#cocos2d::CCObject *actor#>)
+}
+void GFScene::regEventObserver(std::string id, CCObject * actor)
+{
+    GFMsgQueueMgr::getInstance()->regEventObserver(id, actor);
 }

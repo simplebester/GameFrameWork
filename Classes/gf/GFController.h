@@ -15,14 +15,16 @@
 #include "cocos2d.h"
 USING_NS_CC;
 
-class GFController
+class GFController:public CCScene
 {
 public:
-    virtual CCScene * getStartScene() = 0;
-    virtual void update();
+    GFController();
+    
     virtual void processCommand(GFCommand command) = 0;
-    virtual void handleEvent(GFEvent event) = 0;
-    void trigerEvent();
+    virtual void processEvent(GFEvent event) = 0;
+    
+    virtual void update(float dt);
+    void emmitEvent(int type, std::string id, std::string para);
 private:
     CCScene * currScene;
     

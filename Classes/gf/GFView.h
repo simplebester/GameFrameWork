@@ -17,7 +17,8 @@ using namespace cocos2d;
 class GFView:public CCLayer
 {
 public:
-    virtual void  handleEvent(GFEvent event) = 0;
-    void trigerEvent();
+    virtual void  processEvent(GFEvent *event) = 0;
+    void regEventObserver(std::string id, CCObject * actor);
+    void emmitCommand(int type, std::string _actor, std::string id, std::string para);
 };
 #endif /* defined(__GameFrameWork__GFView__) */

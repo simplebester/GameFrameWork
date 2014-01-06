@@ -237,7 +237,9 @@
 		830EC4FC1879A9190006A884 /* GFModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 830EC4F51879A9190006A884 /* GFModel.cpp */; };
 		830EC4FD1879A9190006A884 /* GFMsgQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 830EC4F71879A9190006A884 /* GFMsgQueue.cpp */; };
 		830EC4FE1879A9190006A884 /* GFView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 830EC4F91879A9190006A884 /* GFView.cpp */; };
-		830EC5011879AC860006A884 /* GFScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 830EC4FF1879AC860006A884 /* GFScene.cpp */; };
+		83A7C302187AFCC400677B33 /* DemoLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83A7C300187AFCC400677B33 /* DemoLayer.cpp */; };
+		83A7C305187AFCD400677B33 /* DemoSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83A7C303187AFCD400677B33 /* DemoSprite.cpp */; };
+		83A7C308187AFCE400677B33 /* DemoController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83A7C306187AFCE400677B33 /* DemoController.cpp */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712461292920000B8313A /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB212928DE900B8313A /* libxml2.dylib */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
@@ -740,8 +742,12 @@
 		830EC4F81879A9190006A884 /* GFMsgQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFMsgQueue.h; sourceTree = "<group>"; };
 		830EC4F91879A9190006A884 /* GFView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GFView.cpp; sourceTree = "<group>"; };
 		830EC4FA1879A9190006A884 /* GFView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFView.h; sourceTree = "<group>"; };
-		830EC4FF1879AC860006A884 /* GFScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GFScene.cpp; sourceTree = "<group>"; };
-		830EC5001879AC860006A884 /* GFScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFScene.h; sourceTree = "<group>"; };
+		83A7C300187AFCC400677B33 /* DemoLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DemoLayer.cpp; path = ../Classes/DemoLayer.cpp; sourceTree = "<group>"; };
+		83A7C301187AFCC400677B33 /* DemoLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DemoLayer.h; path = ../Classes/DemoLayer.h; sourceTree = "<group>"; };
+		83A7C303187AFCD400677B33 /* DemoSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DemoSprite.cpp; path = ../Classes/DemoSprite.cpp; sourceTree = "<group>"; };
+		83A7C304187AFCD400677B33 /* DemoSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DemoSprite.h; path = ../Classes/DemoSprite.h; sourceTree = "<group>"; };
+		83A7C306187AFCE400677B33 /* DemoController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DemoController.cpp; path = ../Classes/DemoController.cpp; sourceTree = "<group>"; };
+		83A7C307187AFCE400677B33 /* DemoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DemoController.h; path = ../Classes/DemoController.h; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB212928DE900B8313A /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -1276,6 +1282,9 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				83A7C2FC187AFB6700677B33 /* Model */,
+				83A7C2FB187AFB5900677B33 /* View */,
+				83A7C2FA187AFB4C00677B33 /* Controller */,
 				830EC4F01879A9190006A884 /* gf */,
 				1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */,
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
@@ -1751,11 +1760,36 @@
 				830EC4F81879A9190006A884 /* GFMsgQueue.h */,
 				830EC4F91879A9190006A884 /* GFView.cpp */,
 				830EC4FA1879A9190006A884 /* GFView.h */,
-				830EC4FF1879AC860006A884 /* GFScene.cpp */,
-				830EC5001879AC860006A884 /* GFScene.h */,
 			);
 			name = gf;
 			path = ../Classes/gf;
+			sourceTree = "<group>";
+		};
+		83A7C2FA187AFB4C00677B33 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				83A7C306187AFCE400677B33 /* DemoController.cpp */,
+				83A7C307187AFCE400677B33 /* DemoController.h */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		83A7C2FB187AFB5900677B33 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				83A7C300187AFCC400677B33 /* DemoLayer.cpp */,
+				83A7C301187AFCC400677B33 /* DemoLayer.h */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		83A7C2FC187AFB6700677B33 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				83A7C303187AFCD400677B33 /* DemoSprite.cpp */,
+				83A7C304187AFCD400677B33 /* DemoSprite.h */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1903,10 +1937,12 @@
 				15A3D9991682F7F9002FB0C5 /* cpDampedSpring.c in Sources */,
 				15A3D99A1682F7F9002FB0C5 /* cpGearJoint.c in Sources */,
 				15A3D99B1682F7F9002FB0C5 /* cpGrooveJoint.c in Sources */,
+				83A7C308187AFCE400677B33 /* DemoController.cpp in Sources */,
 				15A3D99C1682F7F9002FB0C5 /* cpPinJoint.c in Sources */,
 				15A3D99D1682F7F9002FB0C5 /* cpPivotJoint.c in Sources */,
 				15A3D99E1682F7F9002FB0C5 /* cpRatchetJoint.c in Sources */,
 				15A3D99F1682F7F9002FB0C5 /* cpRotaryLimitJoint.c in Sources */,
+				83A7C305187AFCD400677B33 /* DemoSprite.cpp in Sources */,
 				15A3D9A01682F7F9002FB0C5 /* cpSimpleMotor.c in Sources */,
 				15A3D9A11682F7F9002FB0C5 /* cpSlideJoint.c in Sources */,
 				15A3D9A21682F7F9002FB0C5 /* cpArbiter.c in Sources */,
@@ -1939,7 +1975,6 @@
 				15A3DA3B1682F826002FB0C5 /* CCLabelBMFontLoader.cpp in Sources */,
 				15A3DA3C1682F826002FB0C5 /* CCLabelTTFLoader.cpp in Sources */,
 				15A3DA3D1682F826002FB0C5 /* CCLayerColorLoader.cpp in Sources */,
-				830EC5011879AC860006A884 /* GFScene.cpp in Sources */,
 				15A3DA3E1682F826002FB0C5 /* CCLayerGradientLoader.cpp in Sources */,
 				15A3DA3F1682F826002FB0C5 /* CCLayerLoader.cpp in Sources */,
 				15A3DA401682F826002FB0C5 /* CCMenuItemImageLoader.cpp in Sources */,
@@ -1974,6 +2009,7 @@
 				15A3DA5E1682F826002FB0C5 /* CCPhysicsDebugNode.cpp in Sources */,
 				15A3DA5F1682F826002FB0C5 /* CCPhysicsSprite.cpp in Sources */,
 				15A3DAEB1682F8A6002FB0C5 /* CDAudioManager.m in Sources */,
+				83A7C302187AFCC400677B33 /* DemoLayer.cpp in Sources */,
 				15A3DAEC1682F8A6002FB0C5 /* CDOpenALSupport.m in Sources */,
 				15A3DAED1682F8A6002FB0C5 /* CocosDenshion.m in Sources */,
 				15A3DAEE1682F8A6002FB0C5 /* SimpleAudioEngine.mm in Sources */,

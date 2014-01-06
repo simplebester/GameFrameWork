@@ -17,8 +17,7 @@ class GFScene:public CCLayer
 {
 public:
     virtual bool init() = 0;
-    static cocos2d::CCScene* scene();
-	CREATE_FUNC(GFScene);
+    void regEventObserver(std::string id, CCObject * actor);
 };
 
 #endif /* defined(__GameFrameWork__GFScene__) */

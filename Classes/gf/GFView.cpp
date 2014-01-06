@@ -7,3 +7,13 @@
 //
 
 #include "GFView.h"
+
+void GFView::emmitCommand(int type, std::string _actor, std::string id, std::string para)
+{
+    GFCommand * command = new GFCommand(type, _actor, id, para);
+    GFMsgQueueMgr::getInstance()->pushCommand(command);
+}
+void GFView::regEventObserver(std::string id, CCObject * actor)
+{
+    GFMsgQueueMgr::getInstance()->regEventObserver(id, actor);
+}

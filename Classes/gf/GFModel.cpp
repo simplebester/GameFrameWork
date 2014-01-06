@@ -8,8 +8,19 @@
 
 #include "GFModel.h"
 #include "GFMsgQueue.h"
-void GFModel::trigerEvent(int type, std::string id, std::string para)
+
+
+void GFModel::emmitEvent(int type, std::string id, std::string para)
 {
-    GFEvent event(type, id, para);
+    GFEvent * event = new GFEvent(type, id, para);
     GFMsgQueueMgr::getInstance()->pushEvent(event);
+}
+
+void GFModel::regEventObserver(std::string id, CCObject * actor)
+{
+    GFMsgQueueMgr::getInstance()->regEventObserver(id, actor);
+}
+void GFModel::regCommandObserver(std::string id, CCObject * actor)
+{
+    GFMsgQueueMgr::getInstance()->regCommandObserver(id, actor);
 }

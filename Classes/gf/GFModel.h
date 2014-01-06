@@ -19,8 +19,11 @@ USING_NS_CC;
 class GFModel: public CCObject
 {
 public:
-    virtual void processCommand(GFCommand command) = 0 ;
-    virtual void handleEvent(GFEvent event) = 0;
-    void trigerEvent();
+    virtual void processCommand(GFCommand *command) = 0 ;
+    virtual void processEvent(GFEvent *event) = 0;
+    void emmitEvent(int type, std::string id, std::string para);
+protected:
+    void regEventObserver(std::string id, CCObject * actor);
+    void regCommandObserver(std::string id, CCObject * actor);
 };
 #endif /* defined(__GameFrameWork__GFModel__) */
