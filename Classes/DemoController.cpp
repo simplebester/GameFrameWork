@@ -7,7 +7,7 @@
 //
 
 #include "DemoController.h"
-#include "DemoScene.h"
+
 DemoController::DemoController()
 {
     init();
